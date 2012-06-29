@@ -1,4 +1,4 @@
-jaga.pk
+This project is lisenced under GPL V2.
 
 
-Changed Code
+Created by Rahber From Nevdo (http://www.nevdo.com)
