@@ -957,6 +957,12 @@ abstract class CApplication extends CModule
 			),
 			'urlManager'=>array(
 				'class'=>'CUrlManager',
+				'urlFormat'=>'path',
+             'rules'=>array(
+                'pattern1'=>'route1',
+                'pattern2'=>'route2',
+                'pattern3'=>'route3',
+            ),
 			),
 			'request'=>array(
 				'class'=>'CHttpRequest',

@@ -1,11 +1,39 @@
-<?php
-$this->breadcrumbs=array(
-	'Menu'=>array('/menu'),
-	'View',
-);?>
-<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
+<div class="form">
 
-<p>
-	You may change the content of this page by modifying
-	the file <tt><?php echo __FILE__; ?></tt>.
-</p>
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'user-view-form',
+	'enableAjaxValidation'=>false,
+));
+
+$model = User::model(); ?>
+
+	<p class="note">Fields with <span class="required">*</span> are required.</p>
+
+	<?php echo $form->errorSummary($model); ?>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'username'); ?>
+		<?php echo $form->textField($model,'username'); ?>
+		<?php echo $form->error($model,'username'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'password'); ?>
+		<?php echo $form->textField($model,'password'); ?>
+		<?php echo $form->error($model,'password'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'email'); ?>
+		<?php echo $form->textField($model,'email'); ?>
+		<?php echo $form->error($model,'email'); ?>
+	</div>
+
+
+	<div class="row buttons">
+		<?php echo CHtml::submitButton('Submit'); ?>
+	</div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- form -->

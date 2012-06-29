@@ -19,6 +19,8 @@
 
 <body>
 
+
+
 <div class="container" id="page">
 
 	<div id="header">
@@ -35,6 +37,74 @@
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		)); ?>
+		
+		
+		<?php
+$this->widget('application.extensions.menu.SMenu',
+array(
+"menu"=>array(
+  array("url"=>array(
+               "route"=>"/product/create"),
+               "label"=>"Sspiner",
+          array("url"=>array(
+                       "route"=>"/product/create"),
+                       "label"=>"Create product",),
+          array("url"=>array(
+                      "route"=>"/product/list"),
+                      "label"=>"Product List",),
+          array("url"=>"",
+                       "label"=>"View Products",
+          array("url"=>array(
+                       "route"=>"/product/show",
+                       "params"=>array("id"=>3),
+                       "htmlOptions"=>array("title"=>"title")),
+                       "label"=>"Product 3"),
+            array("url"=>array(
+                         "route"=>"/product/show",
+                         "params"=>array("id"=>4)),
+                         "label"=>"Product 4",
+                array("url"=>array(
+                             "route"=>"/product/show",
+                             "params"=>array("id"=>5)),
+                             "label"=>"Product 5")))),
+          array("url"=>array(
+                       "route"=>"/event/create"),
+                       "label"=>"Scalendar"),
+          array("url"=>array(),
+                       "label"=>"Admin",
+              array("url"=>array(
+                           "route"=>"/event/admin"),
+                           "label"=>"Scalendar Admin"),
+                  array("url"=>array(
+                               "route"=>"/product/admin"),
+                               "label"=>"Sspinner Admin"),
+                  array("url"=>array(
+                               "route"=>"/product/admin"),
+                               "label"=>"Disabled Link",
+                               "disabled"=>true)),
+          array("url"=>array(),
+                       "label"=>"Documentation",
+              array("url"=>array(
+                           "link"=>"http://www.yiiframework.com",
+                           "htmlOptions"=>array("target"=>"_BLANK")),
+                           "label"=>"Yii Framework"),
+              array("url"=>array(
+                           "route"=>"site/spinnerDoc"),
+                           "label"=>"Sspinner"),
+              array("url"=>array(
+                           "route"=>"site/calendarDoc"),
+                           "label"=>"Scalendar"),
+              array("url"=>array(
+                           "route"=>"site/menuDoc"),
+                           "label"=>"Smenu"),
+                )
+          ),
+"stylesheet"=>"menu_blue.css",
+"menuID"=>"myMenu",
+"delay"=>3
+)
+);
+?>
 	</div><!-- mainmenu -->
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(

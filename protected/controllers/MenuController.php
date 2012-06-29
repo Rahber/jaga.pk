@@ -2,6 +2,11 @@
 
 class MenuController extends Controller
 {
+	public function actionIndex()
+	{
+		$this->render('index');
+	}
+
 	public function actionLoad()
 	{
 		$this->render('load');

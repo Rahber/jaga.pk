@@ -1,4 +1,6 @@
-<?php $this->pageTitle=Yii::app()->name; ?>
+<?php $this->pageTitle=Yii::app()->name;
+
+$value1=1;$value2=0; ?>
 
 <h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
