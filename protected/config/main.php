@@ -47,19 +47,20 @@ return array(
 			),
 		),
 		*/
+		
 		'db'=>array(
-			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
+			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/schema.mysql.sql',
 		),
 		// uncomment the following to use a MySQL database
-		/*
+		
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'root',
 			'charset' => 'utf8',
 		),
-		*/
+		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
             'errorAction'=>'site/error',
@@ -78,6 +79,20 @@ return array(
 				),
 				*/
 			),
+		),
+		
+		
+	),
+	
+	'import'=>array(
+        'application.models.*',
+        'application.components.*',
+	),
+ 
+		'modules'=>array(
+        'gii'=>array(
+            'class'=>'system.gii.GiiModule',
+            'password'=>'r4rahber',
 		),
 	),
 

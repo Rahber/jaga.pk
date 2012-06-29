@@ -1,0 +1,29 @@
+2012/06/29 19:58:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in F:\localhost\www\jaga.pk\jaga.pk\framework\web\CWebApplication.php:280
+Stack trace:
+#0 F:\localhost\www\jaga.pk\jaga.pk\framework\web\CWebApplication.php(135): CWebApplication->runController('gii')
+#1 F:\localhost\www\jaga.pk\jaga.pk\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 F:\localhost\www\jaga.pk\jaga.pk\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/jaga.pk/jaga.pk/index.php?r=gii
+---
+2012/06/29 20:13:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in F:\localhost\www\jaga.pk\jaga.pk\framework\web\CController.php:484
+Stack trace:
+#0 F:\localhost\www\jaga.pk\jaga.pk\framework\web\CController.php(271): CController->missingAction('')
+#1 F:\localhost\www\jaga.pk\jaga.pk\framework\web\CWebApplication.php(276): CController->run('')
+#2 F:\localhost\www\jaga.pk\jaga.pk\framework\web\CWebApplication.php(135): CWebApplication->runController('menu')
+#3 F:\localhost\www\jaga.pk\jaga.pk\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 F:\localhost\www\jaga.pk\jaga.pk\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/jaga.pk/jaga.pk/index.php?r=menu
+HTTP_REFERER=http://localhost/jaga.pk/jaga.pk/index.php?r=gii/controller
+---
+2012/06/29 20:14:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in F:\localhost\www\jaga.pk\jaga.pk\framework\web\CController.php:484
+Stack trace:
+#0 F:\localhost\www\jaga.pk\jaga.pk\framework\web\CController.php(271): CController->missingAction('')
+#1 F:\localhost\www\jaga.pk\jaga.pk\framework\web\CWebApplication.php(276): CController->run('')
+#2 F:\localhost\www\jaga.pk\jaga.pk\framework\web\CWebApplication.php(135): CWebApplication->runController('menu')
+#3 F:\localhost\www\jaga.pk\jaga.pk\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 F:\localhost\www\jaga.pk\jaga.pk\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/jaga.pk/jaga.pk/index.php?r=menu
+---
