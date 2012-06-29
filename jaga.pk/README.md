@@ -1,4 +1,0 @@
-jaga.pk
-=======
-
-Jaga.pk
