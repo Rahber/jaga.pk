@@ -5,18 +5,23 @@
 	www.nevdo.com
 
 */
+
+global $user; global $theme;
+
 class user{
 
 
 
-function user_settings(){
+
+
+ function user_settings(){
 
 global $user; global $theme;
-echo "rahe";
 
 
 
-$theme = "defaultt";
+
+$theme = "default";
 
 
 

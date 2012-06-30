@@ -5,15 +5,15 @@
 	www.nevdo.com
 
 */
-global $user;
+global $user,$theme;
 class template{
 
 var $_rootref;
 
 function load_file($file){
+global $theme;
 
-
-$path='./protected/layout/default/template/' . $file;
+$path='./protected/layout/'.$theme.'/template/' . $file;
 include($path);
 
 }
