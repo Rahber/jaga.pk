@@ -8,7 +8,17 @@
 global $user,$theme;
 class template{
 
-var $_rootref;
+var $root = './protected/layout/default/template/';
+	var $cachepath = '';
+	var $files = array();
+	var $filename = array();
+	var $files_inherit = array();
+	var $files_template = array();
+	var $inherit_root = '';
+	var $orig_tpl_storedb;
+	var $orig_tpl_inherits_id;
+	var $_tpldata = array('.' => array(0 => array()));
+	var $_rootref;
 
 function load_file($file){
 global $theme;
@@ -28,11 +38,80 @@ function set_template()
 		
 	}
 	
+	function _tpl_include($filename, $include = true)
+	{
+		$handle = $filename;
+		$this->filename[$handle] = $filename;
+		$this->files[$handle] = $this->root . '/' . $filename;
+		
+
+
+
+		if ($include)
+		{
+			global $user;
+
+			if ($filename)
+			{
+				include($filename);
+				return;
+			}
+			
+		}
+	}
+	
+		function assign_var($varname, $varval)
+	{
+		$this->_rootref[$varname] = $varval;
+
+		return true;
+	}
+	
 	function assign_vars($vararray)
 	{
 		foreach ($vararray as $key => $val)
 		{
 			$this->_rootref[$key] = $val;
+		}
+
+		return true;
+	}
+	
+	function assign_display($handle, $template_var = '', $return_content = true, $include_once = false)
+	{
+		ob_start();
+		
+		$contents = ob_get_clean();
+
+		if ($return_content)
+		{
+			return $contents;
+		}
+
+		$this->assign_var($template_var, $contents);
+
+		return true;
+	}
+	
+	function set_filenames($filename_array)
+	{
+	
+		if (!is_array($filename_array))
+		{
+			return false;
+		}
+		foreach ($filename_array as $handle => $filename)
+		{
+			if (empty($filename))
+			{
+				trigger_error("template->set_filenames: Empty filename specified for $handle", E_USER_ERROR);
+			}
+
+			$this->filename[$handle] = $filename;
+			$this->files[$handle] = $this->root . '/' . $filename;
+
+		self:: _tpl_include($this->files[$handle]);
+		self::assign_display($this,$this);
 		}
 
 		return true;

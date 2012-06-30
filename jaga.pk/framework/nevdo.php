@@ -25,8 +25,15 @@ function load_header(){
 global $user;
 $template = new template();
 $template->set_template();
-$template->load_file(HEADERFILE);
+//$template->load_file(HEADERFILE);
 
+$template->assign_vars(array(
+	'TITLE'	=> 'test',
+	) );
+
+$template->set_filenames(array(
+	'body' => 'header.html')
+);
 
 
 }
