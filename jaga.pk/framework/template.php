@@ -13,27 +13,18 @@ var $_rootref;
 function load_file($file){
 
 
-
-echo $file;
+$path='./protected/layout/default/template/' . $file;
+include($path);
 
 }
 
 function set_template()
 	{
 		global $phpbb_root_path, $user;
-		echo $user->theme;
+		
 
 	
-		if (file_exists( '../protected/layout/' . $user->theme. '/template/header.html')){
-		
-		
-		return true;
-		}
-		else
-		{
-		trigger_error("There was an error");
-		return false;
-		}
+
 		
 	}
 	

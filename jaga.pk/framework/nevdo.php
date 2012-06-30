@@ -58,7 +58,7 @@ $session->startSession();
 
 $user  = new user();
 $user->user_settings();
-echo $user->theme;
+
 }
 
 
