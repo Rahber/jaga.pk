@@ -60,37 +60,30 @@ function set_template()
 		}
 	}
 	
-		function assign_var($varname, $varval)
-	{
-		$this->_rootref[$varname] = $varval;
-
-		return true;
-	}
+		
 	
-	function assign_vars($vararray)
+	function assign_vars($vararray,$pageContents)
 	{
 		foreach ($vararray as $key => $val)
 		{
-			$this->_rootref[$key] = $val;
+			 $pageContents = str_replace ($key, $val, $pageContents);
 		}
 
-		return true;
+		return $pageContents;
 	}
+
 	
-	function assign_display($handle, $template_var = '', $return_content = true, $include_once = false)
+	function assign_display($template_var)
 	{
-		ob_start();
 		
-		$contents = ob_get_clean();
+		
+		 $contents = ob_get_clean();
+	
 
-		if ($return_content)
-		{
-			return $contents;
-		}
-
-		$this->assign_var($template_var, $contents);
-
-		return true;
+	$contents = $this->assign_vars($template_var, $contents);
+	
+			echo $contents;
+		
 	}
 	
 	function set_filenames($filename_array)
@@ -111,7 +104,7 @@ function set_template()
 			$this->files[$handle] = $this->root . '/' . $filename;
 
 		self:: _tpl_include($this->files[$handle]);
-		self::assign_display($this,$this);
+		
 		}
 
 		return true;

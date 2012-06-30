@@ -27,13 +27,16 @@ $template = new template();
 $template->set_template();
 //$template->load_file(HEADERFILE);
 
-$template->assign_vars(array(
-	'TITLE'	=> 'test',
-	) );
+
 
 $template->set_filenames(array(
 	'body' => 'header.html')
 );
+
+$template->assign_display(array(
+	'{TITLE}'	=> 'test',
+	'{TITLEE}'	=> 'test2'
+	) );
 
 
 }

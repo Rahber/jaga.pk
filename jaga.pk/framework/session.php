@@ -33,6 +33,7 @@ class session{
 
 			$_SESSION['timeout_idle'] = time() + $timeout;
 			$sid=session_id();
+			
 
 	}
 	
