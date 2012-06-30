@@ -66,7 +66,7 @@ function set_template()
 	{
 		foreach ($vararray as $key => $val)
 		{
-			 $pageContents = str_replace ($key, $val, $pageContents);
+			 $pageContents = str_replace ('{'.$key.'}', $val, $pageContents);
 		}
 
 		return $pageContents;

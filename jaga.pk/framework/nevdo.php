@@ -34,8 +34,8 @@ $template->set_filenames(array(
 );
 
 $template->assign_display(array(
-	'{TITLE}'	=> 'test',
-	'{TITLEE}'	=> 'test2'
+	'TITLE'	=> 'test',
+	'TITLEE'	=> 'test2'
 	) );
 
 
