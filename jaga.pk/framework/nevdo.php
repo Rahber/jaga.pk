@@ -29,14 +29,6 @@ $template->set_template();
 
 
 
-$template->set_filenames(array(
-	'body' => 'header.html')
-);
-
-$template->assign_display(array(
-	'TITLE'	=> 'test',
-	'TITLEE'	=> 'test2'
-	) );
 
 
 }
