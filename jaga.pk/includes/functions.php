@@ -33,7 +33,7 @@ function set_var(&$result, $var, $type, $multibyte = false)
 			}
 		}
 
-		$result = (STRIP) ? stripslashes($result) : $result;
+		@$result = (STRIP) ? stripslashes($result) : $result;
 	}
 }
 
@@ -112,6 +112,43 @@ function request_var($var_name, $default, $multibyte = false, $cookie = false) /
 	}
 
 	return $var;
+}
+
+function utf8_normalize_nfc($strings)
+{
+	if (empty($strings))
+	{
+		return $strings;
+	}
+
+	if (!class_exists('utf_normalizer'))
+	{
+
+		include('utf_normalizer.php' );
+	}
+
+	if (!is_array($strings))
+	{
+		utf_normalizer::nfc($strings);
+	}
+	else if (is_array($strings))
+	{
+		foreach ($strings as $key => $string)
+		{
+			if (is_array($string))
+			{
+				foreach ($string as $_key => $_string)
+				{
+					utf_normalizer::nfc($strings[$key][$_key]);
+				}
+			}
+			else
+			{
+				utf_normalizer::nfc($strings[$key]);
+			}
+		}
+	}
+	return $strings;
 }
 
 ?>

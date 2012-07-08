@@ -30,6 +30,7 @@ require_once(dirname(__FILE__).'/template.php');
 require_once(dirname(__FILE__).'/session.php');
 
 require_once(dirname(__FILE__).'../../includes/functions.php');
+//require_once(dirname(__FILE__).'../../includes/utf_normalizer.php');
 
 
 
