@@ -97,7 +97,7 @@ function set_template()
 		{
 			if (empty($filename))
 			{
-				trigger_error("template->set_filenames: Empty filename specified for $handle", E_USER_ERROR);
+				trigger_error("template->set_filenames: Empty filename specified ", E_USER_ERROR);
 			}
 
 			$this->filename[$handle] = $filename;
