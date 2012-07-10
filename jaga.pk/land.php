@@ -12,9 +12,9 @@ $nevdo = new nevdo();
 $nevdo->start_application(); // initialising the application
 
 
-$path = (request_var('path', '/',true));
+$path = (request_var('land', '/',true));
 
-
+echo slug($path);
 $pathdata = explode("/", $path);
 echo "category "; echo $pathdata[0];
 echo "<br />Property name "; echo @$pathdata[1];

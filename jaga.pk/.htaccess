@@ -1,1 +1,10 @@
-Options -Indexes
+# -FrontPage-
+
+
+RewriteEngine on
+RewriteBase /
+RewriteCond %{HTTP_HOST} !^www\.localhost [NC]
+
+
+RewriteRule /([^/]+)/([^/]+)   /jaga.pk/jaga.pk/jaga.pk/$1.php?land=$2 [L]
+RewriteRule /([^/]+)/  /jaga.pk/jaga.pk/jaga.pk/$1.php [L]
